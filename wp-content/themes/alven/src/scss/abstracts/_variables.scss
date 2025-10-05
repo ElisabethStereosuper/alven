@@ -1,0 +1,37 @@
+// Variables 🧮 //
+
+// Colors 🎨
+$black: #000;
+$white: #fff;
+$primary: #003240;
+$txt: $primary;
+$secondary: #3aafa9;
+$tertiary: #fff0a1;
+$quaternary: #a2d5ac;
+$grey: #f6f7f8;
+
+// Fonts ✍
+$century: 'Century Gothic', sans-serif;
+$roboto: 'Roboto Slab', $century;
+
+// Grids variables 📐
+$gutter: 16px;
+$line-height: 22px;
+$col: 100% / 12;
+$col-content: 100% / 10;
+
+// Mediaqueries 📱
+// Horizontal sizes
+$desktop: 1200px + $gutter * 4;
+$desktop-small: 960px;
+$tablet: 768px;
+$phone: 580px;
+$phone-small: 400px;
+
+// Vertical sizes
+$phone-small-v: 600px;
+$desktop-v: 900px;
+$desktop-xxl-v: 1080px;
+
+//Transitions
+$transition: 0.3s ease-in-out;

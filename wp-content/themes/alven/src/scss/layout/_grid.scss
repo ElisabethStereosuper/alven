@@ -1,0 +1,22 @@
+/* Grid */
+
+.wrapper {
+    overflow-x: hidden;
+}
+
+.main {
+    padding: 95px 0 0;
+}
+
+.container {
+    width: 100%;
+    max-width: $desktop;
+    padding: 0 $gutter * 2;
+    margin: 0 auto;
+}
+
+@media (min-width: $desktop-small) {
+    .content {
+        margin: 0 $col;
+    }
+}

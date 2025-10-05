@@ -1,0 +1,136 @@
+.team-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -12px;
+    text-align: center;
+    .name,
+    .function {
+        display: block;
+        font-weight: 900;
+    }
+    .name {
+        font-family: $roboto;
+    }
+    .function {
+        color: $secondary;
+    }
+}
+
+.member {
+    width: 50%;
+    padding: 60px 12px 0;
+}
+
+.team-member {
+    display: block;
+    width: 100%;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    text-align: center;
+    &:hover,
+    &:focus,
+    &.off {
+        opacity: 0.7;
+    }
+    .img {
+        width: 100%;
+        padding: 0 0 125%;
+        background-size: cover;
+        background-position: 50% 0;
+        background-color: $primary;
+        background-blend-mode: screen;
+    }
+    .name {
+        padding: 30px 0 0;
+        font-size: 1.6rem;
+    }
+    .function {
+        font-size: 1.2rem;
+    }
+}
+
+.share-team {
+    justify-content: center;
+    > li {
+        margin: 0 10px;
+    }
+    a {
+        &:hover,
+        &:focus {
+            color: $secondary;
+        }
+    }
+}
+
+.team-desc {
+    display: none;
+}
+
+.wrapper-desc {
+    width: 100%;
+    > .container {
+        padding-top: 120px;
+        margin-top: -60px;
+        position: relative;
+    }
+    .team-desc {
+        display: block;
+        padding: 0 $gutter * 4 25px;
+    }
+    .name {
+        font-size: 2.3rem;
+    }
+    .function {
+        font-size: 1.8rem;
+    }
+}
+
+.team-btn {
+    width: 14px;
+    height: 28px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    color: $secondary;
+    .icon {
+        height: 100%;
+    }
+    &:hover,
+    &:focus {
+        color: $quaternary;
+    }
+    &.prev {
+        left: $gutter * 2;
+    }
+    &.next {
+        right: $gutter * 2;
+    }
+}
+
+@media (min-width: $phone) {
+    .member {
+        width: 33.33%;
+    }
+}
+
+@media (min-width: $tablet) {
+    .wrapper-desc {
+        .team-desc {
+            padding: 0 $col * 2 85px;
+        }
+        .name {
+            font-size: 3.4rem;
+        }
+        .function {
+            font-size: 2.3rem;
+        }
+    }
+}
+
+@media (min-width: $desktop-small) {
+    .member {
+        width: 20%;
+    }
+}

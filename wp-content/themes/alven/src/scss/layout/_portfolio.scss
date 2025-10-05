@@ -1,0 +1,572 @@
+.portfolio-logos {
+    position: relative;
+    height: 40px;
+    margin: 45px 0 -15px;
+    list-style: none;
+    opacity: 0.3;
+    > li {
+        display: none;
+        width: 25%;
+        height: 50px;
+        padding: 0 15px;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        margin: 0;
+        &.on {
+            display: flex;
+        }
+        &.logo-1 {
+            left: 0;
+        }
+        &.logo-2 {
+            left: 25%;
+        }
+        &.logo-3 {
+            left: 50%;
+        }
+        &.logo-4 {
+            left: 75%;
+        }
+    }
+    svg {
+        width: 100%;
+        //min-width: 100px;
+        min-height: 30px;
+        max-width: 120px;
+        max-height: 50px;
+    }
+    path,
+    polygon,
+    rect,
+    ellipse,
+    circle,
+    line,
+    polyline {
+        fill: #fff;
+    }
+}
+
+.portfolio-wrapper {
+    padding: 0 0 100px;
+}
+
+.portfolio-filters {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 $gutter/-2 40px;
+    font-weight: 900;
+    ul {
+        margin: 0;
+        list-style: none;
+        ul {
+            padding: 0;
+        }
+    }
+    li {
+        margin: 0 $gutter/2 5px;
+        li {
+            font-weight: 400;
+        }
+    }
+    .form-search {
+        max-width: none;
+        margin: 10px 0 25px;
+    }
+    .btn-filter {
+        padding-left: 10px;
+        &.on {
+            font-weight: 900;
+        }
+    }
+    p {
+        margin: 0 10px 0 0;
+        font-weight: 400;
+    }
+}
+
+.open-filters {
+    margin: 0 10px;
+    &:hover,
+    &:focus {
+        color: $secondary;
+    }
+}
+
+.filters-container {
+    display: none;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    overflow-y: auto;
+    text-align: center;
+    background: #fff;
+    opacity: 0;
+}
+
+.close-filters {
+    margin: 0 0 30px;
+    .icon {
+        width: 30px;
+        height: 30px;
+    }
+    &:hover,
+    &:focus {
+        color: $secondary;
+    }
+}
+
+.portfolio-content {
+    margin: 0 -10px;
+}
+
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    text-align: center;
+    line-height: 1;
+    list-style: none;
+    > li {
+        width: 50%;
+        padding: 10px;
+        margin: 0;
+        &.off {
+            display: none;
+        }
+        &.s-off {
+            display: none;
+        }
+    }
+    .transfered {
+        a {
+            &:after {
+                content: none;
+            }
+        }
+    }
+    a {
+        display: block;
+        height: 0;
+        padding: 0 0 83%;
+        border: 2px solid $primary;
+        position: relative;
+        z-index: 1;
+        background: $primary;
+        color: $tertiary;
+        &:after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            z-index: -1;
+            background: #fff;
+            opacity: 0.2;
+            transition: $transition;
+        }
+        > svg {
+            height: 50%;
+            margin: auto;
+        }
+        path,
+        polygon,
+        rect,
+        ellipse,
+        circle,
+        line,
+        polyline {
+            transition: $transition;
+        }
+        &:not(:hover) {
+            path,
+            polygon,
+            rect,
+            ellipse,
+            circle,
+            line,
+            polyline {
+                fill: #fff;
+            }
+        }
+        &:hover {
+            background: #fff !important;
+            &:after {
+                opacity: 0;
+            }
+        }
+    }
+    a > svg,
+    .content-transfered {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    svg {
+        width: 55%;
+    }
+    span {
+        width: 100%;
+    }
+    .content-transfered {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 25%;
+        }
+        svg {
+            height: 100%;
+        }
+    }
+}
+
+.portfolio-detail {
+    margin: 0 0 50px;
+    overflow: hidden;
+    background: $primary;
+    color: #fff;
+}
+
+.portfolio-detail-content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    .btn-close {
+        position: absolute;
+        top: 15px;
+        right: $gutter * 2;
+    }
+}
+
+.portfolio-header {
+    font-size: 1.5rem;
+}
+
+.portfolio-logo {
+    max-width: 400px;
+    height: 0;
+    padding: 0 0 30%;
+    position: relative;
+    margin: 0 0 25px;
+    background: #fff;
+    > img {
+        max-width: 60%;
+        max-height: 60%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+}
+
+.portfolio-term {
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.portfolio-btn {
+    margin: 0 0 27px;
+}
+
+.btn-store,
+.btn-play {
+    display: inline-block;
+    width: 134px;
+    height: 40px;
+    text-indent: -99em;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    overflow: hidden;
+    &:focus,
+    &:hover {
+        opacity: 0.7;
+    }
+}
+.btn-store {
+    margin: 0 5px 0 0;
+    background-image: url(../../img/app-store.png);
+}
+.btn-play {
+    background-image: url(../../img/google-play.png);
+}
+
+.portfolio-keywords {
+    display: none;
+}
+
+.portfolio-text {
+    padding: 20px 0 0;
+    > div {
+        > p {
+            &:first-of-type {
+                margin-top: 0;
+            }
+        }
+    }
+    .btn-invert {
+        margin: 50px 0 0;
+    }
+}
+
+.portfolio-related {
+    padding: 70px 0 5px;
+    background: #fff;
+    color: $primary;
+}
+
+@media (min-width: $phone-small) {
+    .portfolio {
+        > li {
+            width: 33%;
+        }
+    }
+}
+
+@media (min-width: $phone) {
+    .portfolio-logos {
+        > li {
+            width: 20%;
+            padding: 0 20px;
+            &.logo-2 {
+                left: 20%;
+            }
+            &.logo-3 {
+                left: 40%;
+            }
+            &.logo-4 {
+                left: 60%;
+            }
+            &.logo-5 {
+                left: 80%;
+            }
+        }
+    }
+
+    .portfolio {
+        .content-transfered {
+            padding: 25px 0;
+        }
+    }
+}
+
+@media (min-width: $tablet) {
+    .portfolio-logos {
+        > li {
+            width: 14.28%;
+            &.logo-2 {
+                left: 14.28%;
+            }
+            &.logo-3 {
+                left: 28.57%;
+            }
+            &.logo-4 {
+                left: 42.87%;
+            }
+            &.logo-5 {
+                left: 57.12%;
+            }
+            &.logo-6 {
+                left: 71.4%;
+            }
+            &.logo-7 {
+                left: 85.68%;
+            }
+        }
+    }
+
+    .portfolio-filters {
+        display: block;
+        width: 25%;
+        margin: 0;
+        ul {
+            margin: 10px 0 25px;
+            ul {
+                margin: 10px 0 20px 20px;
+                &:empty {
+                    margin: 0;
+                }
+            }
+        }
+        li {
+            margin: 0 0 5px;
+        }
+        .btn-filter {
+            padding: 5px 30px 5px 20px;
+            border-left: 5px solid transparent;
+            font-weight: 900;
+            &.on {
+                border-color: $secondary;
+            }
+        }
+        p {
+            display: none;
+        }
+    }
+
+    .filters-container {
+        display: block !important;
+        padding: 0;
+        position: static;
+        text-align: left;
+        opacity: 1 !important;
+    }
+
+    .close-filters,
+    .open-filters {
+        display: none;
+    }
+
+    .portfolio-wrapper {
+        display: flex;
+        padding: 0 0 150px;
+    }
+
+    .portfolio {
+        margin: 0 -10px 0 10px;
+    }
+
+    .portfolio-content {
+        width: 75%;
+        margin: 0;
+    }
+}
+
+@media (min-width: $desktop-small) {
+    .portfolio-logos {
+        > li {
+            width: 11.11%;
+            &.logo-2 {
+                left: 11.11%;
+            }
+            &.logo-3 {
+                left: 22.22%;
+            }
+            &.logo-4 {
+                left: 33.33%;
+            }
+            &.logo-5 {
+                left: 44.44%;
+            }
+            &.logo-6 {
+                left: 55.55%;
+            }
+            &.logo-7 {
+                left: 66.66%;
+            }
+            &.logo-8 {
+                left: 77.77%;
+            }
+            &.logo-9 {
+                left: 88.88%;
+            }
+        }
+    }
+
+    .portfolio-filters {
+        .form-search {
+            margin-bottom: 30px;
+        }
+    }
+
+    .portfolio {
+        > li {
+            width: 25%;
+        }
+    }
+
+    .portfolio-detail-content {
+        display: flex;
+        align-items: flex-start;
+        padding-top: 120px;
+        padding-bottom: 75px;
+        .btn-close {
+            top: 120px;
+        }
+    }
+
+    .portfolio-header {
+        width: $col * 3;
+        margin: 0 $col 0 0;
+        flex-shrink: 0;
+    }
+
+    .portfolio-logo {
+        padding: 0 0 77%;
+    }
+
+    .portfolio-keywords {
+        display: block;
+        margin: 35px 0 0;
+    }
+
+    .portfolio-text {
+        width: $col * 8;
+        padding: 0 $col 0 0;
+        .gallery-wrapper {
+            margin-right: calc(#{$col * -2} + #{$gutter});
+        }
+    }
+
+    .portfolio-related {
+        padding: 110px 0 0;
+    }
+}
+
+@media (min-width: $desktop) {
+    .portfolio-logos {
+        > li {
+            width: 9.09%;
+            &.logo-2 {
+                left: 9.09%;
+            }
+            &.logo-3 {
+                left: 18.18%;
+            }
+            &.logo-4 {
+                left: 27.27%;
+            }
+            &.logo-5 {
+                left: 36.36%;
+            }
+            &.logo-6 {
+                left: 45.45%;
+            }
+            &.logo-7 {
+                left: 54.54%;
+            }
+            &.logo-8 {
+                left: 63.63%;
+            }
+            &.logo-9 {
+                left: 72.72%;
+            }
+            &.logo-10 {
+                left: 81.81%;
+            }
+            &.logo-11 {
+                left: 90.9%;
+            }
+        }
+    }
+
+    .portfolio-filters {
+        .form-search {
+            width: 66%;
+        }
+    }
+}

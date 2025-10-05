@@ -1,0 +1,112 @@
+.alven-logos {
+    padding: 30px 0;
+    position: relative;
+    margin: 60px 0 10px;
+    z-index: 1;
+    text-align: center;
+    font-size: 1.3rem;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: calc(50% - 50vw);
+        right: calc(50% - 50vw);
+        z-index: -1;
+        background: $grey;
+    }
+}
+
+.alven-logos-wrapper {
+    display: flex;
+    width: calc(100% + 30px);
+    position: relative;
+    margin: 0 -15px;
+    overflow: hidden;
+    > ul {
+        display: flex;
+        width: 100%;
+        //justify-content: center;
+        list-style: none;
+    }
+}
+
+.alven-logo {
+    width: 50%;
+    flex-shrink: 0;
+    padding: 0 15px;
+    margin: 0;
+    .img {
+        display: flex;
+        max-width: 80%;
+        height: 50px;
+        padding: 0 0 10px;
+        margin: 0 auto;
+        align-items: center;
+    }
+    img {
+        max-height: 100%;
+        width: auto;
+        margin: 0 auto;
+    }
+    > p {
+        margin: 0;
+    }
+}
+
+.logos-prev,
+.logos-next {
+    width: 7px;
+    height: 12px;
+    position: absolute;
+    top: 0;
+    bottom: 10%;
+    margin: auto;
+    &.off {
+        display: none;
+    }
+    > .icon {
+        height: 100%;
+    }
+    &[disabled] {
+        opacity: 0.7;
+    }
+}
+.logos-prev {
+    left: 0;
+}
+.logos-next {
+    right: 0;
+}
+
+@media (min-width: $tablet) {
+    .alven-logos {
+        padding: 50px 0;
+    }
+
+    .alven-logos-wrapper {
+        width: calc(100% + 80px);
+        margin: 0 -40px;
+    }
+
+    .alven-logo {
+        width: 25%;
+        padding: 0 40px;
+    }
+
+    .logos-prev {
+        left: 20px;
+    }
+    .logos-next {
+        right: 20px;
+    }
+}
+
+@media (min-width: $desktop-small) {
+    .logos-prev {
+        left: 0;
+    }
+    .logos-next {
+        right: 0;
+    }
+}

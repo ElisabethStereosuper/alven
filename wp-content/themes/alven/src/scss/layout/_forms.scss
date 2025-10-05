@@ -1,0 +1,287 @@
+/* Forms */
+
+::-webkit-input-placeholder {
+}
+::-moz-placeholder {
+}
+:-ms-input-placeholder {
+}
+
+form {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+input,
+textarea,
+select,
+button {
+    border: 0;
+    text-align: left;
+    color: inherit;
+    transition: $transition;
+    &:focus {
+        outline: 0;
+    }
+    &.error {
+        background: rgba(red, 0.2);
+    }
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 4px;
+    background: $grey;
+    &:invalid {
+        // FF red borders
+        box-shadow: none;
+    }
+}
+
+input {
+    // hide the symbols of input search
+    &[type='search'] {
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-decoration {
+            display: none;
+        }
+    }
+    &[type='date'] {
+        color: transparent;
+        &:focus,
+        .off & {
+            color: inherit;
+        }
+    }
+}
+
+textarea {
+    height: 170px;
+}
+
+label {
+    color: $secondary;
+}
+.label-fixed {
+    display: block;
+    margin: 0 15px 5px;
+}
+.form-desc {
+    font-size: 0.8em;
+}
+
+select {
+    height: 44px;
+    background: $grey;
+}
+
+fieldset {
+    max-width: none !important;
+}
+
+.form-elt {
+    &.invalid {
+        background: rgba(red, 0.2);
+    }
+}
+
+.field-wrapper {
+    display: flex;
+    justify-content: space-between;
+    .field {
+        width: 48%;
+    }
+}
+
+.field {
+    position: relative;
+    margin: 0 0 20px;
+    text-align: left;
+    .label {
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        pointer-events: none;
+    }
+    &.off {
+        .label {
+            display: none;
+        }
+    }
+}
+
+.form-search-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 60px;
+}
+
+.form-search-header {
+    display: none;
+}
+
+.form-search {
+    width: 100%;
+    position: relative;
+    text-align: left;
+    input {
+        padding: 10px 40px 10px 20px;
+        border: 2px solid $primary;
+        border-radius: 0;
+        background: none;
+    }
+    .label {
+        top: 12px;
+        left: 22px;
+        font-weight: 900;
+    }
+    .btn-search {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        .icon {
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+
+.field-search {
+    position: relative;
+    .label {
+        position: absolute;
+        pointer-events: none;
+        color: $primary;
+    }
+    &.off {
+        .label {
+            display: none;
+        }
+    }
+}
+
+.btn-search {
+    padding: 0 0 0 12px;
+    position: relative;
+    margin: 0 0 0 12px;
+    &:after {
+        content: '';
+        width: 1px;
+        position: absolute;
+        top: 4px;
+        left: 0;
+        bottom: 0;
+        background: #fff;
+    }
+    .icon {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+.hbspt-form {
+    .input {
+        margin-right: 0 !important;
+    }
+}
+
+.inputs-list {
+    display: flex;
+    list-style: none;
+    line-height: 1;
+    > li {
+        margin: 0 20px 10px 1px;
+    }
+}
+
+.hs-form-radio-display {
+    display: flex;
+}
+
+.hs-input {
+    width: 100% !important;
+    &[type='radio'] {
+        width: auto !important;
+        margin: 0 5px 0 0;
+    }
+    &[type='file'] {
+        line-height: 1;
+        padding: 20px 15px;
+        cursor: pointer;
+    }
+}
+
+.hs-form-radio-display {
+    cursor: pointer;
+}
+
+.hs-error-msg {
+    display: block;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    color: rgba(red, 0.6);
+}
+
+.hs-form-radio-display {
+    color: $primary;
+}
+
+.form-columns-2 {
+    > .field {
+        width: 48% !important;
+        &:first-child {
+            float: left !important;
+        }
+        &:last-child {
+            float: right !important;
+        }
+    }
+}
+
+.ohnohoney {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+}
+
+@media (min-width: $tablet) {
+    .form-search {
+        max-width: 285px;
+    }
+}
+
+@media (min-width: $desktop) {
+    .form-search-header {
+        display: flex;
+        margin: -5px 0 0;
+        align-items: center;
+        text-align: left;
+        .field-search {
+            width: 0;
+            overflow: hidden;
+            transition: $transition;
+            &.on {
+                width: 80px;
+            }
+        }
+        input {
+            width: 80px;
+            padding: 0;
+            border-radius: 0;
+            background: none;
+        }
+        .label {
+            top: 0;
+            right: 0;
+            color: #fff;
+        }
+    }
+}

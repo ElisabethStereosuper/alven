@@ -1,0 +1,53 @@
+<?php
+/*
+Template Name: Sitemap
+*/
+get_header(); ?>
+
+<?php if ( have_posts() ) : the_post(); ?>
+
+	<div class='title-wrapper'>
+		<div class='container'>
+			<h1><?php the_title(); ?></h1>
+		</div>
+	</div>
+
+	<div class='container'>
+		<?php the_content(); ?>
+
+		<div class="content">
+			<h2 class="h2"><?php _e('Pages', 'alven'); ?></h2>
+			<ul>
+				<?php wp_list_pages( array('post_type' => 'page', 'title_li' => '', 'sort_column' => 'post_title') ); ?>
+			</ul>
+
+			<?php
+				function listPosts($postType, $tax){
+					$options = $tax ? array( array('taxonomy' => 'types', 'field' => 'slug', 'terms' => $tax) ) : '';
+					$posts = get_posts( array('post_type' => $postType, 'orderby' => 'title', 'posts_per_page' => -1, 'order' => 'ASC', 'tax_query' => $options) );
+
+					if(!$posts) echo '<p>' . __('Nothing was found', 'alven') . '</p>';
+
+					$output = "<ul>";
+					foreach( $posts as $post ){
+						$output .= '<li>';
+						$output .= '<a href="'. get_permalink($post->ID) .'" title="' . __('Go to ', 'alven') . get_the_title($post->ID) .'">';
+						$output .= get_the_title($post->ID);
+						$output .= '</a>';
+						$output .= '</li>';
+					}
+					$output .= '</ul>';
+
+					echo $output;
+				}
+			?>
+
+			<h2 class="h2"><?php _e('News', 'alven'); ?></h2>
+			<?php listPosts('post', ''); ?>
+		</div>
+
+	</div>
+
+<?php endif; ?>
+
+<?php get_footer(); ?>

@@ -1,0 +1,23 @@
+.share {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    list-style: none;
+    > li {
+        margin: 0 $gutter 0 0;
+        &:last-child {
+            margin: 0;
+        }
+    }
+    a {
+        color: inherit;
+        &:hover {
+            color: $quaternary;
+        }
+    }
+    .icon {
+        width: 16px;
+        height: 15px;
+        transform: translate3d(0, 0, 0);
+    }
+}
